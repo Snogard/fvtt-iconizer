@@ -6,4 +6,6 @@ let utils = {
             })
             .catch(err => false);
     },
-}
+};
+
+export default utils;

@@ -30,7 +30,6 @@ async function findIcon(item) {
     }
 }
 
-
 Hooks.on("preCreateItem", (createData, item) => {
     item = replaceIcon(item);
 });
