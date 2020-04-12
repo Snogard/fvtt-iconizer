@@ -1,6 +1,6 @@
 import "./costants.js";
 
-function registerSettings()
+export function registerSettings()
 {
     game.settings.register(modSettingName,"cloud-shared-repo",
     {
