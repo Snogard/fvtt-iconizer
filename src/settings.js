@@ -16,7 +16,7 @@ export function registerSettings()
     {
         name: "Shared Internal Storage",
         hint: "tbd",
-        default: "assets/share",
+        default: "assets/shared",
         type: Azzu.SettingsTypes.DirectoryPicker,
         scope: "world",
         config: true,

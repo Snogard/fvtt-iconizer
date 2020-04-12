@@ -6,6 +6,11 @@ let utils = {
             })
             .catch(err => false);
     },
+
+    log(type,text)
+    {
+        console.log("iconizer | ".concat(type,": ",text));
+    }
 };
 
 export default utils;
