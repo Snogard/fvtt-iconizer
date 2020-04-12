@@ -1,11 +1,7 @@
-
-Hooks.on("init",()=>{
-    registerSettings();
-});
+import "./costants.js";
 
 function registerSettings()
 {
-    const modSettingName = "fvtt-iconizer";
     game.settings.register(modSettingName,"cloud-shared-repo",
     {
         name: "Shared Cloud Storage",
@@ -20,8 +16,8 @@ function registerSettings()
     {
         name: "Shared Internal Storage",
         hint: "tbd",
-        default: "",
-        type: String,
+        default: "assets/shared",
+        type: Azzu.SettingsTypes.DirectoryPicker,
         scope: "world",
         config: true,
     })
@@ -41,7 +37,7 @@ function registerSettings()
         name: "World Internal Storage",
         hint: "tbd",
         default: "",
-        type: String,
+        type: Azzu.SettingsTypes.DirectoryPicker,
         scope: "world",
         config: true,
     })

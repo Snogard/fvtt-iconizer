@@ -18,12 +18,12 @@
         }
     ],
 
-    "scripts": ["src/settings.js"],
+    "scripts": ["src/settings.js","src/hooks.js","src/iconizer.js","src/costants.js","src/utils.js"],
     "esmodules" : [],
     "styles": [],
     "packs": [],
 
-    "version": "0.0.2",
+    "version": "0.0.3",
     "minimumCoreVersion": "0.5.3",
     "url": "https://github.com/Snogard/fvtt-iconizer",
     "manifest": "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/module.json",
