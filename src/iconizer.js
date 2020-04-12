@@ -6,7 +6,6 @@ async function replaceIcon(item) {
     //utils.log(options);
     if (!item || !item.name) return item;
 
-
     //check default-icon
     if (!item.img || item.img.toLowerCase().indexOf("icons/svg/mystery-man.svg") !== -1) {
         let newIcon = await findIcon(item);
@@ -14,16 +13,20 @@ async function replaceIcon(item) {
             item.img = newIcon;
         }
     }
+
+    return item;
 }
 
 async function findIcon(item) {
     utils.log("findicon", "start");
     let path = game.settings.get(modSettingName, "internal-shared-repo");
-    utils.log("findicon", path);
+    
     
     let name = item.name.toLowerCase().replace(" ", "-");
     let newIcon = path.concat("/", item.type, "/", name, ".png");
     let iconExists = await utils.serverFileExists(newIcon);
+
+    utils.log("findicon", newIcon);
 
     if (iconExists) {
         utils.log("findicon","found");
