@@ -10,17 +10,17 @@ function registerSettings()
         type: String,
         scope: "world",
         config: true,
-    })
+    });
 
     game.settings.register(modSettingName,"internal-shared-repo",
     {
         name: "Shared Internal Storage",
         hint: "tbd",
-        default: "assets/shared",
+        default: "assets/share",
         type: Azzu.SettingsTypes.DirectoryPicker,
         scope: "world",
         config: true,
-    })
+    });
 
     game.settings.register(modSettingName,"cloud-world-repo",
     {
@@ -30,7 +30,7 @@ function registerSettings()
         type: String,
         scope: "world",
         config: true,
-    })
+    });
 
     game.settings.register(modSettingName,"internal-world-repo",
     {
@@ -40,5 +40,5 @@ function registerSettings()
         type: Azzu.SettingsTypes.DirectoryPicker,
         scope: "world",
         config: true,
-    })
+    });
 }
