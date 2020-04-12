@@ -4,12 +4,11 @@
     "description": "A simple module that sets icons automatically",
     "authors": [
         {
-          "name": "Snogard",
-          "email": "",
-          "url": ""
+            "name": "Snogard",
+            "email": "",
+            "url": ""
         }
     ],
-      
     "languages": [
         {
             "lang": "en",
@@ -17,12 +16,17 @@
             "path": "lang/en.json"
         }
     ],
-
-    "scripts": ["src/settings.js","src/hooks.js","src/iconizer.js","src/costants.js","src/utils.js"],
-    "esmodules" : [],
+    "scripts": [
+        "src/costants.js"
+    ],
+    "esmodules": [
+        "src/settings.js",
+        "src/hooks.js",
+        "src/iconizer.js",
+        "src/utils.js"
+    ],
     "styles": [],
     "packs": [],
-
     "version": "0.0.3",
     "minimumCoreVersion": "0.5.3",
     "url": "https://github.com/Snogard/fvtt-iconizer",
@@ -30,5 +34,5 @@
     "download": "https://codeload.github.com/Snogard/fvtt-iconizer/zip/master",
     "license": "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/license.md",
     "bugs": "https://github.com/Snogard/fvtt-iconizer/issues",
-    "changelog" : "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/changelog.md"
-  }
+    "changelog": "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/changelog.md"
+}
