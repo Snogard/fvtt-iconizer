@@ -1,5 +1,11 @@
+
 Hooks.on("init",()=>{
-    const modSettingName "vtt-"
+    registerSettings();
+});
+
+function registerSettings()
+{
+    const modSettingName = "fvtt-iconizer";
     game.settings.register(modSettingName,"cloud-shared-repo",
     {
         name: "Shared Cloud Storage",
@@ -39,4 +45,4 @@ Hooks.on("init",()=>{
         scope: "world",
         config: true,
     })
-});
+}
