@@ -27,7 +27,7 @@
     "minimumCoreVersion": "0.5.3",
     "url": "https://github.com/Snogard/fvtt-iconizer",
     "manifest": "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/module.json",
-    "download": "",
+    "download": "https://github.com/Snogard/fvtt-iconizer/releases/download/v0.0.1/fvtt-iconizer.zip",
     "license": "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/license.md",
     "bugs": "https://github.com/Snogard/fvtt-iconizer/issues",
     "changelog" : "https://raw.githubusercontent.com/Snogard/fvtt-iconizer/master/changelog.md"
