@@ -1,15 +1,14 @@
 let utils = {
-    async serverFileExists(path) {
-        return fetch(path, { method: "HEAD" })
-            .then(resp => {
-                return resp.status < 400;
-            })
-            .catch(err => false);
+    serverFileExists(path) 
+    {
+        let http = new XMLHttpRequest();
+        http.open("HEAD",path,false);
+        http.send();
+        return http.status < 400;
     },
 
-    log(type,text)
-    {
-        console.log("iconizer | ".concat(type,": ",text));
+    log(type, text) {
+        console.log("iconizer | ".concat(type, ": ", text));
     }
 };
 

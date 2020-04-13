@@ -1,36 +1,38 @@
 import "./costants.js";
 import utils from "./utils.js";
 
-async function replaceIcon(item) {
+function replaceIcon(itemData) {
 
     //utils.log(options);
-    if (!item || !item.name) return item;
+    if (!itemData) return itemData;
 
-    //check default-icon
-    if (!item.img || item.img.toLowerCase().indexOf("icons/svg/mystery-man.svg") !== -1) {
-        let newIcon = await findIcon(item);
-        if (newIcon != null) {
-            item.img = newIcon;
+    //todo check custom default-icon
+
+    if (!itemData.iconPath || 
+        itemData.iconPath.toLowerCase().indexOf("icons/svg/mystery-man.svg") !== -1 || 
+        !utils.serverFileExists(itemData.iconPath)) {
+        let newIconPath = findIcon(itemData);
+        if (newIconPath != null) {
+            return newIconPath;
         }
     }
 
-    return item;
+    return itemData.iconPath;
 }
 
-async function findIcon(item) {
+function findIcon(itemData) {
     utils.log("findicon", "start");
     let path = game.settings.get(modSettingName, "internal-shared-repo");
     
-    
-    let name = item.name.toLowerCase().replace(" ", "-");
-    let newIcon = path.concat("/", item.type, "/", name, ".png");
-    let iconExists = await utils.serverFileExists(newIcon);
+    let name = itemData.name.toLowerCase().replace(" ", "-");
+    let newIconPath = path.concat("/", itemData.type, "/", name, ".png");
+    let iconExists = utils.serverFileExists(newIconPath);
 
-    utils.log("findicon", newIcon);
+    utils.log("findicon", newIconPath);
 
     if (iconExists) {
         utils.log("findicon","found");
-        return newIcon;
+        return newIconPath;
     }
     else {
         utils.log("findicon","not found");
@@ -38,6 +40,27 @@ async function findIcon(item) {
     }
 }
 
-Hooks.on("preCreateItem", (createData, item) => {
-    item = replaceIcon(item);
+Hooks.on("preUpdateItem",(entity, updates) => {
+    processItemHook(updates, entity);
 });
+
+Hooks.on("preCreateItem",(entity, updates) => {
+    processItemHook(updates, entity);
+});
+
+function processItemHook(updates, entity) {
+    let itemData = {};
+    itemData.name = updates.name ? updates.name : entity.data.name;
+    itemData.iconPath = updates.img ? updates.img : (entity.data ? entity.data.img : null);
+    itemData.type = updates.type ? updates.type : entity.data.type;
+
+    let iconPath = replaceIcon(itemData);
+
+    updates.img = iconPath;
+
+    utils.log("event", updates.img);
+}
+
+function sleep(millis) {
+    return new Promise(resolve => setTimeout(resolve, millis));
+}
