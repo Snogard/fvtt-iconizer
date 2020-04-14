@@ -1,5 +1,7 @@
 import "./costants.js";
 
+Hooks.once('init', registerSettings);
+
 export function registerSettings()
 {
     // game.settings.register(modSettingName,"cloud-shared-repo",

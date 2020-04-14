@@ -1,3 +1,5 @@
+# Iconizer
+A simple Foundry VTT module that sets icon automatically
 
 ## Definitions
 

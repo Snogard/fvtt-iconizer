@@ -21,7 +21,6 @@
     ],
     "esmodules": [
         "src/settings.js",
-        "src/hooks.js",
         "src/iconizer.js",
         "src/utils.js"
     ],
